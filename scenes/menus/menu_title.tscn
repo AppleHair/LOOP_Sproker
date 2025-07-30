@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://t3w2q316fjpo"]
+
+[ext_resource type="PackedScene" uid="uid://2f7qcv1x2y3x" path="res://scenes/base/menu_base.tscn" id="1_lf77a"]
+[ext_resource type="Script" uid="uid://i438ta2qw7mu" path="res://scripts/menus/menu_title.gd" id="2_77ira"]
+[ext_resource type="Theme" uid="uid://cysonj8aivx2s" path="res://themes/menu_theme.tres" id="2_oxigu"]
+[ext_resource type="Texture2D" uid="uid://dd1nbj2myrgxg" path="res://sprites/title_alt.png" id="4_xhyjc"]
+[ext_resource type="PackedScene" uid="uid://dhobqdll607ll" path="res://scenes/menu_option.tscn" id="5_7x4ts"]
+
+[node name="Title" instance=ExtResource("1_lf77a")]
+texture_filter = 1
+theme = ExtResource("2_oxigu")
+script = ExtResource("2_77ira")
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0468358, 4.7126e-05, 0.158588, 1)
+
+[node name="Text" type="BoxContainer" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -73.5
+offset_right = 97.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="Text" index="0"]
+layout_mode = 2
+texture = ExtResource("4_xhyjc")
+
+[node name="Options" type="BoxContainer" parent="Text" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Start" parent="Text/Options" index="0" instance=ExtResource("5_7x4ts")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Quit")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Quit")
+text = "start"
+
+[node name="Quit" parent="Text/Options" index="1" instance=ExtResource("5_7x4ts")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../Start")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Start")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../Start")
+focus_previous = NodePath("../Start")
+text = "quit"

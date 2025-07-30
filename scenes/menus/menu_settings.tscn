@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://fgy1uychwuo6"]
+
+[ext_resource type="PackedScene" uid="uid://2f7qcv1x2y3x" path="res://scenes/base/menu_base.tscn" id="1_5j1ja"]
+[ext_resource type="Script" uid="uid://bb54cw712ec3j" path="res://scripts/menus/menu_settings.gd" id="2_h2cnl"]
+[ext_resource type="Theme" uid="uid://cysonj8aivx2s" path="res://themes/menu_theme.tres" id="2_ngxyd"]
+[ext_resource type="PackedScene" uid="uid://dhobqdll607ll" path="res://scenes/menu_option.tscn" id="4_p33wh"]
+[ext_resource type="PackedScene" uid="uid://cgfgvne7fo30j" path="res://scenes/menu_label.tscn" id="5_p33wh"]
+
+[node name="Settings" instance=ExtResource("1_5j1ja")]
+texture_filter = 1
+theme = ExtResource("2_ngxyd")
+script = ExtResource("2_h2cnl")
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0468358, 4.7126e-05, 0.158588, 1)
+
+[node name="Options" type="BoxContainer" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -20.0
+offset_right = 43.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="StartWinSize" parent="Options" index="0" instance=ExtResource("4_p33wh")]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../Back")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../ResetSize")
+focus_next = NodePath("../ResetSize")
+focus_previous = NodePath("../Back")
+text = "startup window size:      "
+
+[node name="MenuLabel" parent="Options/StartWinSize" index="0" instance=ExtResource("5_p33wh")]
+layout_mode = 1
+offset_left = -24.0
+
+[node name="ResetSize" parent="Options" index="1" instance=ExtResource("4_p33wh")]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../StartWinSize")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../Back")
+focus_next = NodePath("../Back")
+focus_previous = NodePath("../StartWinSize")
+text = "reset window size"
+
+[node name="Back" parent="Options" index="2" instance=ExtResource("4_p33wh")]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../ResetSize")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../StartWinSize")
+focus_next = NodePath("../StartWinSize")
+focus_previous = NodePath("../ResetSize")
+text = "back"

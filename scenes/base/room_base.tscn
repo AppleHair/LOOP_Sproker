@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://hndxqih1u0lv"]
+
+[ext_resource type="Script" uid="uid://byc1ywfqaslb1" path="res://scripts/base/room_base.gd" id="1_sasjk"]
+
+[node name="Room" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_sasjk")
+
+[node name="Bound" type="Area2D" parent="."]
+
+[node name="BoundShape" type="CollisionShape2D" parent="Bound"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[connection signal="body_exited" from="Bound" to="." method="_on_bound_body_exited"]
