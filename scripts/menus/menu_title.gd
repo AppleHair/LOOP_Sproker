@@ -9,7 +9,7 @@ var quit_removed:bool = false
 ## Loads the pause menu and the level.
 func start() -> void:
 	get_tree().paused = false
-	# Game.get_game(get_tree()).load_level("level_1")
+	Game.get_game(get_tree()).load_level("level_1")
 	GUI.get_gui(get_tree()).switch_menu("menu_pause")
 	# The pause menu will start invisible.
 	MenuBase.current_menu.visible = false

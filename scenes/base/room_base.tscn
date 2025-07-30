@@ -9,6 +9,7 @@ script = ExtResource("1_sasjk")
 [node name="Bound" type="Area2D" parent="."]
 
 [node name="BoundShape" type="CollisionShape2D" parent="Bound"]
+debug_color = Color(0.84326, 0.00105984, 0.915728, 0.42)
 
 [node name="Background" type="Node2D" parent="."]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=4 uid="uid://yd4gga8ax2gk"]
+
+[ext_resource type="PackedScene" uid="uid://hndxqih1u0lv" path="res://scenes/base/room_base.tscn" id="1_6kfl2"]
+[ext_resource type="TileSet" uid="uid://vtvomjrycj6r" path="res://tile_sets/tiles.tres" id="2_rda17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kfl2"]
+size = Vector2(240, 320)
+
+[node name="Room" instance=ExtResource("1_6kfl2")]
+
+[node name="BoundShape" parent="Bound" index="0"]
+position = Vector2(120, 160)
+shape = SubResource("RectangleShape2D_6kfl2")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Foreground" index="0"]
+tile_map_data = PackedByteArray("AAADAA8AAQABAAIAAAAEAA8AAQABAAIAAAAFAA8AAQABAAIAAAAGAA8AAQABAAIAAAAHAA8AAQABAAIAAAAIAA8AAQABAAIAAAAJAA8AAQABAAIAAAAKAA8AAQABAAIAAAALAA8AAQABAAIAAAACAA8AAQAAAAMAAAAMAA8AAQABAAMAAAACABAAAQACAAEAAAAMABAAAQAAAAEAAAADAAIAAQAAAAEAAAADAAMAAQAAAAEAAAADAAQAAQADAAMAAAACAAQAAQABAAAAAAABAAQAAQABAAAAAAAAAAQAAQABAAAAAAALAAQAAQACAAMAAAAMAAQAAQABAAAAAAANAAQAAQABAAAAAAAOAAQAAQABAAAAAAALAAIAAQACAAEAAAALAAMAAQACAAEAAAA=")
+tile_set = ExtResource("2_rda17")
