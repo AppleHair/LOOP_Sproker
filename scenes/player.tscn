@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7q2j750dkb8n"]
+
+[ext_resource type="Script" uid="uid://ciwbg5i2vvxa7" path="res://scripts/player/player.gd" id="1_p0vlq"]
+[ext_resource type="SpriteFrames" uid="uid://hqsi2lpfq4ga" path="res://sprite_frames/player.tres" id="2_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q5h1"]
+size = Vector2(10, 10)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_p0vlq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = ExtResource("2_g2els")
+animation = &"pull"
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/sammy.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "34890980766f386b07001bdbf51ec169"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_5q5h1")

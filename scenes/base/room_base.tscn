@@ -21,4 +21,5 @@ debug_color = Color(0.84326, 0.00105984, 0.915728, 0.42)
 
 [node name="Foreground" type="Node2D" parent="."]
 
+[connection signal="area_exited" from="Bound" to="." method="_on_bound_area_exited"]
 [connection signal="body_exited" from="Bound" to="." method="_on_bound_body_exited"]

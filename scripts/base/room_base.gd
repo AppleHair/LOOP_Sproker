@@ -45,8 +45,14 @@ func get_bound_rect() -> Rect2:
 			* $Bound/BoundShape.global_transform.inverse()
 	)
 	return _bound_rect_cache
-## Calls the [method Player.out_of_bounds] function
-## when the player gets out of the bounds of the room.
-# func _on_bound_body_exited(body: Node2D) -> void:
-# 	if body is Player:
-# 		body.out_of_bounds()
+# ## Calls the [method Wasp.out_of_bounds] function
+# ## when a wasp gets out of the bounds of the room.
+#func _on_bound_body_exited(body: Node2D) -> void:
+#	if body is Wasp:
+#		body.out_of_bounds()
+
+## Calls the [method Spray.out_of_bounds] function
+## when a spray gets out of the bounds of the room.
+func _on_bound_area_exited(area: Area2D) -> void:
+	if area.owner is Spray:
+		area.owner.out_of_bounds()

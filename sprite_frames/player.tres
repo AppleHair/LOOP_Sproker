@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=4 uid="uid://hqsi2lpfq4ga"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_5q5h1"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAACWAQAAUklGRo4BAABXRUJQVlA4TIIBAAAvL8AHED+gkI0kaEhWYP1dnoM5DQVt2zBpO1bjz+oRBILkNcH+Jgs8/wGAPM9l4kBV7gFc27abOJcgeifcZrtlrUlteqxpExdacFA9Wf8P0vuGiP4zcNu2kdreHgL0C6AAsAGQADDQPEZJe2iIYoTM0SgeeIvt8Zl4eWtztzWKx8HFNu8I993au9ooHofv+MEOvBVdXhvF4zBLRnbbMyp+cxrFY9P/znY1JiPY3BrFA6MEts1QjNBmFsBo73nghWIJYFf+1Wag8T0KigzsS6l6Dm4t4jGXaiARoQFwaMiB0drzKM7+5zCvSO83DZkCzpElAYiIpACvDcsKQI/0sEwhFTY0wMbzAEDFwxsMPUzoofbGhoQytN7gHY2C1ptPrqOC0rvAnbvTUHqPfu1dbU2I0vsttvZXI+g90E5/qb9mht4HF6PNoHL2eh9m+9JW6oecE6GHSEWNgwsyr0SE6umcXqqXucjFqYiIMNiozCWde94ikDRE6Y0NU2wYovUmPYkAAA==")
+size_override = Vector2(48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0vlq"]
+atlas = SubResource("PortableCompressedTexture2D_5q5h1")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6fml"]
+atlas = SubResource("PortableCompressedTexture2D_5q5h1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3li8b"]
+atlas = SubResource("PortableCompressedTexture2D_5q5h1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdl7e"]
+atlas = SubResource("PortableCompressedTexture2D_5q5h1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu4a1"]
+atlas = SubResource("PortableCompressedTexture2D_5q5h1")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0vlq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6fml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3li8b")
+}],
+"loop": true,
+"name": &"pull",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdl7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu4a1")
+}],
+"loop": true,
+"name": &"push",
+"speed": 10.0
+}]

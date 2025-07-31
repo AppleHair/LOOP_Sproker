@@ -41,7 +41,7 @@ func record_inputs():
 		"actions": {}
 	}
 	# Capture the relevant input actions.
-	for action in ["run_left", "run_right", "jump", "action_up", "action_down"]:
+	for action in ["run_left", "run_right", "jump", "shoot"]:
 		input_event.actions[action] = Input.is_action_pressed(action)
 	recorded_inputs.append(input_event)
 

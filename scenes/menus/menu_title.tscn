@@ -69,3 +69,30 @@ focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath("../Start")
 focus_previous = NodePath("../Start")
 text = "quit"
+
+[node name="creator" type="Label" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -18.0
+offset_right = 56.0
+offset_bottom = -10.0
+grow_vertical = 0
+text = "By AppleHair"
+
+[node name="gmtk" type="Label" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -18.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "GMTK Game Jam 2025"

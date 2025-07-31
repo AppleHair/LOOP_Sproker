@@ -50,6 +50,7 @@ text = "startup window size:      "
 [node name="MenuLabel" parent="Options/StartWinSize" index="0" instance=ExtResource("5_p33wh")]
 layout_mode = 1
 offset_left = -24.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 
 [node name="ResetSize" parent="Options" index="1" instance=ExtResource("4_p33wh")]
 layout_mode = 2
