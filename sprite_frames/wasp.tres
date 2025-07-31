@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=4 uid="uid://ckgx0vl1h125o"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_m6pw7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAABAAAACgAAAAUklGRpgAAABXRUJQVlA4TIwAAAAvH8ADECcgECDkmtVkQyCQ5A+03gKCIv9Hm/8A8KcUcBBJUl1NcQoIBq4uBoA18D7n31T+URDR/wngskcxLAIwbBO9+07vbKakTZe0aUN1DWhD1fBQbWOj2saOpB1JBqGlzrWAljoN+GVmAf9lZgBdEhBTUhT4ZCZ4/DIzApBsUyTb8WCDB76hsF94Iw==")
+size_override = Vector2(32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3bjr"]
+atlas = SubResource("PortableCompressedTexture2D_m6pw7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbr72"]
+atlas = SubResource("PortableCompressedTexture2D_m6pw7")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3bjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbr72")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

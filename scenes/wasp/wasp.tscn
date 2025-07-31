@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=4 uid="uid://bt75qhnjmu20r"]
+
+[ext_resource type="Script" uid="uid://d1lx20udnjmyw" path="res://scripts/wasp.gd" id="1_m6pw7"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_m6pw7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAAAeAQAAUklGRhYBAABXRUJQVlA4TAoBAAAvL8AHECcgECDkmtVkQyCQ5A+03gKCIv9Hm/8A8KcUgB3bbtzmDeAGaDYAP7kAkq+BLOi/KTDM/h/R/wnAlwfN4SQAhwPkwAhakGPEZgwUc2dZksqQVCRdpU+1i0Cfag6upj6LWp9Frc/SZ9NG0kZSkSQaqHtblwG6t+WIdbWHCOAtMw2It8wkEJn5BIAhCQCXJBogyctLZgLBt8wkgcy8FUheTPIyJGyDKAgiCIC2g2Fv2Ab+RXJgBC1oDidPzJ2FY8SZpKssSUerqc/Sp9p11GdTUevzTNJO0kmsqz1EgLq3ddlHiMx8AsBbZhpOJXkZknCcmbfykplnQ8JW8jPQdkF8MvChfeaLAQ==")
+size_override = Vector2(48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3bjr"]
+atlas = SubResource("PortableCompressedTexture2D_m6pw7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbr72"]
+atlas = SubResource("PortableCompressedTexture2D_m6pw7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck85v"]
+atlas = SubResource("PortableCompressedTexture2D_m6pw7")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p85h"]
+atlas = SubResource("PortableCompressedTexture2D_m6pw7")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8q6g"]
+atlas = SubResource("PortableCompressedTexture2D_m6pw7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrp6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3bjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbr72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck85v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p85h")
+}],
+"loop": true,
+"name": &"attacking",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8q6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3bjr")
+}],
+"loop": true,
+"name": &"landing",
+"speed": 20.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_gbr72"]
+points = PackedVector2Array(-1, 0, 2, 0, 2, 6, -1, 6)
+
+[node name="Wasp" type="Node2D"]
+script = ExtResource("1_m6pw7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hrp6c")
+animation = &"landing"
+frame = 1
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/wasp.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0a778a246b70e481d698734fb7d5c4ea"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("ConvexPolygonShape2D_gbr72")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
