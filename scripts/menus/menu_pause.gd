@@ -21,10 +21,10 @@ func resume() -> void:
 	# visible again and give focus to the resume option.
 	just_paused = true
 
-# NOTE: This is a test pause menu option
-## Will switch to the next room that is loaded. 
-func next_room() -> void:
-	Game.get_game(get_tree()).next_room()
+## Reloads the current level. 
+func reset() -> void:
+	var game:Game = Game.get_game(get_tree())
+	game.load_level(game.current_level)
 	resume()
 
 ## Switches to the settings menu
@@ -47,7 +47,7 @@ func _ready() -> void:
 	# Defining the basic menu behavior.
 	_options = {
 		"resume": resume,
-		"next room": next_room,
+		"reset": reset,
 		"settings": settings,
 		"return to title": title
 	}

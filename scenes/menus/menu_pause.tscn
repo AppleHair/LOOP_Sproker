@@ -46,12 +46,12 @@ layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Title")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../NextRoom")
-focus_next = NodePath("../NextRoom")
+focus_neighbor_bottom = NodePath("../Reset")
+focus_next = NodePath("../Reset")
 focus_previous = NodePath("../Title")
 text = "resume"
 
-[node name="NextRoom" parent="Options" index="1" instance=ExtResource("3_m0klm")]
+[node name="Reset" parent="Options" index="1" instance=ExtResource("3_m0klm")]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Resume")
@@ -59,16 +59,16 @@ focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Settings")
 focus_next = NodePath("../Settings")
 focus_previous = NodePath("../Resume")
-text = "next room"
+text = "reset"
 
 [node name="Settings" parent="Options" index="2" instance=ExtResource("3_m0klm")]
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../NextRoom")
+focus_neighbor_top = NodePath("../Reset")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Title")
 focus_next = NodePath("../Title")
-focus_previous = NodePath("../NextRoom")
+focus_previous = NodePath("../Reset")
 text = "settings"
 
 [node name="Title" parent="Options" index="3" instance=ExtResource("3_m0klm")]

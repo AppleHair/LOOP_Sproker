@@ -64,12 +64,14 @@ func _draw() -> void:
 func _physics_process(delta: float) -> void:
 	match state:
 		State.LANDING:
-			switch_dir_timer -= delta
-			if switch_dir_timer <= 0.0:
-				direction_x = -direction_x
-				switch_dir_timer = switch_dir_time
+			
 			position.y += SPEED_Y * delta
-			position.x += velocity_x * direction_x * delta
+			if position.y >= 48.0:
+				switch_dir_timer -= delta
+				if switch_dir_timer <= 0.0:
+					direction_x = -direction_x
+					switch_dir_timer = switch_dir_time
+				position.x += velocity_x * direction_x * delta
 			if position.y >= 232.0:
 				state = State.ATTACKING
 		State.ATTACKING:
@@ -84,7 +86,7 @@ func out_of_bounds() -> void:
 	queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if state == State.DYING:
+	if state == State.DYING or position.y < 48.0:
 		return
 	if not(area.owner is Spray):
 		return

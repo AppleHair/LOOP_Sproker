@@ -39,8 +39,8 @@ func _physics_process(delta: float) -> void:
 	match state:
 		PlayerState.NORMAL:
 			if shoot_timer > 0.0:
-				if not Input.is_action_pressed("shoot"):
-					shoot_timer = 0.0
+				# if not Input.is_action_pressed("shoot"):
+				# 	shoot_timer = 0.0
 				shoot_timer -= delta
 			# Add the gravity.
 			if not is_on_floor():
