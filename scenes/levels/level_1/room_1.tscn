@@ -1,64 +1,83 @@
-[gd_scene load_steps=5 format=4 uid="uid://yd4gga8ax2gk"]
+[gd_scene load_steps=4 format=3 uid="uid://yd4gga8ax2gk"]
 
 [ext_resource type="PackedScene" uid="uid://hndxqih1u0lv" path="res://scenes/base/room_base.tscn" id="1_6kfl2"]
-[ext_resource type="PackedScene" uid="uid://bt75qhnjmu20r" path="res://scenes/wasp/wasp.tscn" id="2_13ucr"]
-[ext_resource type="TileSet" uid="uid://vtvomjrycj6r" path="res://tile_sets/tiles.tres" id="2_rda17"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kfl2"]
-size = Vector2(240, 320)
+[ext_resource type="PackedScene" uid="uid://bt75qhnjmu20r" path="res://scenes/wasp.tscn" id="2_13ucr"]
+[ext_resource type="PackedScene" uid="uid://b32xynpe4v30p" path="res://scenes/trash.tscn" id="3_13ucr"]
 
 [node name="Room" instance=ExtResource("1_6kfl2")]
 
-[node name="BoundShape" parent="Bound" index="0"]
-position = Vector2(120, 160)
-shape = SubResource("RectangleShape2D_6kfl2")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Background" index="0"]
-tile_map_data = PackedByteArray("AAACAAQAAQABAAIAAAADAAQAAQABAAIAAAAEAAMAAQACAAEAAAAEAAIAAQACAAEAAAABAAIAAQAAAAEAAAABAAMAAQAAAAEAAAABAAEAAQAAAAAAAAAEAAEAAQACAAAAAAAEAAQAAQACAAIAAAABAAQAAQAAAAIAAAALAAQAAQABAAIAAAAMAAQAAQABAAIAAAAKAAIAAQAAAAEAAAAKAAMAAQAAAAEAAAANAAIAAQACAAEAAAANAAMAAQACAAEAAAAKAAQAAQAAAAIAAAANAAQAAQACAAIAAAAKAAEAAQAAAAAAAAANAAEAAQACAAAAAAADAAgAAQABAAAAAAAEAAgAAQABAAAAAAAEAAkAAQACAAEAAAAKAAgAAQABAAIAAAALAAgAAQABAAIAAAAMAAgAAQABAAIAAAALAAcAAQAAAAEAAAAFAAgAAQABAAAAAAAGAAUAAQABAAAAAAAIAAsAAQABAAIAAAAJAAsAAQABAAIAAAA=")
-tile_set = ExtResource("2_rda17")
-
 [node name="Wasp" parent="Kills" index="0" instance=ExtResource("2_13ucr")]
 position = Vector2(48, -112)
-velocity_x = 150.0
 
 [node name="Wasp2" parent="Kills" index="1" instance=ExtResource("2_13ucr")]
 position = Vector2(192, -288)
 direction_x = -1
-velocity_x = 100.0
 
 [node name="Wasp3" parent="Kills" index="2" instance=ExtResource("2_13ucr")]
 position = Vector2(192, -64)
 direction_x = -1
-velocity_x = 80.0
 
 [node name="Wasp4" parent="Kills" index="3" instance=ExtResource("2_13ucr")]
-position = Vector2(192, -224)
+position = Vector2(192, -240)
 direction_x = -1
 
 [node name="Wasp5" parent="Kills" index="4" instance=ExtResource("2_13ucr")]
 position = Vector2(48, 0)
-velocity_x = 80.0
 
 [node name="Wasp6" parent="Kills" index="5" instance=ExtResource("2_13ucr")]
 position = Vector2(192, -168)
 direction_x = -1
-velocity_x = 160.0
 
 [node name="Wasp7" parent="Kills" index="6" instance=ExtResource("2_13ucr")]
 position = Vector2(48, -144)
-velocity_x = 100.0
 
 [node name="Wasp8" parent="Kills" index="7" instance=ExtResource("2_13ucr")]
 position = Vector2(48, -224)
-velocity_x = 90.0
 
 [node name="Wasp9" parent="Kills" index="8" instance=ExtResource("2_13ucr")]
 position = Vector2(48, -256)
-velocity_x = 90.0
 
-[node name="PlayerSpawn" parent="." index="4"]
-position = Vector2(120, 240)
+[node name="Trash" parent="Kills" index="9" instance=ExtResource("3_13ucr")]
+position = Vector2(112, -72)
+frame = 1
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Foreground" index="0"]
-tile_map_data = PackedByteArray("AAADAA8AAQABAAIAAAAEAA8AAQABAAIAAAAFAA8AAQABAAIAAAAGAA8AAQABAAIAAAAHAA8AAQABAAIAAAAIAA8AAQABAAIAAAAJAA8AAQABAAIAAAAKAA8AAQABAAIAAAALAA8AAQABAAIAAAACAA4AAQAAAAEAAAACAA0AAQAAAAEAAAAMAA4AAQACAAEAAAAMAA0AAQACAAEAAAAMAA8AAQABAAIAAAACAA8AAQABAAIAAAABAA8AAQABAAIAAAAAAA8AAQABAAIAAAANAA8AAQABAAIAAAAOAA8AAQABAAIAAAACAAEAAQABAAAAAAADAAEAAQABAAAAAAAMAAEAAQABAAAAAAALAAEAAQABAAAAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAAMAAAAAQABAAEAAAALAAAAAQABAAEAAAA=")
-tile_set = ExtResource("2_rda17")
+[node name="Trash2" parent="Kills" index="10" instance=ExtResource("3_13ucr")]
+position = Vector2(144, -144)
+
+[node name="Trash3" parent="Kills" index="11" instance=ExtResource("3_13ucr")]
+position = Vector2(112, -176)
+frame = 2
+
+[node name="Trash4" parent="Kills" index="12" instance=ExtResource("3_13ucr")]
+position = Vector2(40, -80)
+
+[node name="Trash5" parent="Kills" index="13" instance=ExtResource("3_13ucr")]
+position = Vector2(200, -112)
+frame = 2
+
+[node name="Trash6" parent="Kills" index="14" instance=ExtResource("3_13ucr")]
+position = Vector2(64, -192)
+
+[node name="Trash7" parent="Kills" index="15" instance=ExtResource("3_13ucr")]
+position = Vector2(144, -216)
+frame = 2
+
+[node name="Trash8" parent="Kills" index="16" instance=ExtResource("3_13ucr")]
+position = Vector2(40, -280)
+
+[node name="Trash9" parent="Kills" index="17" instance=ExtResource("3_13ucr")]
+position = Vector2(80, -240)
+
+[node name="Trash10" parent="Kills" index="18" instance=ExtResource("3_13ucr")]
+position = Vector2(200, -208)
+frame = 1
+
+[node name="Trash11" parent="Kills" index="19" instance=ExtResource("3_13ucr")]
+position = Vector2(80, -128)
+
+[node name="Trash12" parent="Kills" index="20" instance=ExtResource("3_13ucr")]
+position = Vector2(160, -272)
+
+[node name="Trash13" parent="Kills" index="21" instance=ExtResource("3_13ucr")]
+position = Vector2(96, -304)
+frame = 2

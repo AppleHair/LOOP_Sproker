@@ -49,5 +49,9 @@ func get_bound_rect() -> Rect2:
 ## Calls the out_of_bounds function
 ## when a spray or wasp gets out of the bounds of the room.
 func _on_bound_area_exited(area: Area2D) -> void:
-	if area.owner is Spray or area.owner is Wasp:
+	if (
+			area.owner is Spray or
+			area.owner is Wasp or
+			area.owner is Trash
+	):
 		area.owner.out_of_bounds()

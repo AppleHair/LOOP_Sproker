@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=4 uid="uid://b32xynpe4v30p"]
+
+[ext_resource type="Script" uid="uid://bs2yynasy6sf4" path="res://scripts/trash.gd" id="1_3xixx"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_s847y"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAADcAAAAUklGRtQAAABXRUJQVlA4TMgAAAAvH8AHECcgJCBcEv3f4w+RAGkM9KtZIQHhkuj/Km3+AwBssvkDxEaSwzYHPxs4kAWkBBLbAAl8/029RKWEiP5PgP51QrxEEeh5Pv39ypZQBUo2RQEIaY8jJAFeIWW6TU1M1c4xzgxelel0e+iG7WGP0zAY2OMMZ4puqtLD2cSr9jiZ0gT6IqR0NkmTKmmPo1pUsz0I4uF5Yq+4wba5mL2seMNe3b7oNnRzs7rxujq5PnRzgw39w+q+md2VLyveREGXE3vFjSagSw==")
+size_override = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xixx"]
+atlas = SubResource("PortableCompressedTexture2D_s847y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exrr5"]
+atlas = SubResource("PortableCompressedTexture2D_s847y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cq4d"]
+atlas = SubResource("PortableCompressedTexture2D_s847y")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6jqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xixx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exrr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cq4d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s847y"]
+size = Vector2(12, 12)
+
+[node name="Trash" type="Node2D"]
+script = ExtResource("1_3xixx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_w6jqc")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/trash.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "420e7b593c898e10ea6f4f52a31006f1"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s847y")

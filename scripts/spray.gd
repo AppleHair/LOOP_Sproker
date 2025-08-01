@@ -1,7 +1,7 @@
 class_name Spray
 extends Node2D
 
-const EXPAND_TIME = 0.1
+const EXPAND_TIME = 0.15
 const SPEED:float = 240.0
 
 var wasps_killed:int = 0
@@ -21,7 +21,7 @@ func resize_spray(change: int) -> void:
 	if change == 0:
 		return
 	if colli.scale.x + (change as float) <= 0.0:
-		queue_free()
+		destroy()
 		return
 	colli.scale.x += change
 	@warning_ignore("narrowing_conversion")
@@ -43,4 +43,7 @@ func resize_spray(change: int) -> void:
 				tile_map.erase_cell(left_coord)
 
 func out_of_bounds() -> void:
+	destroy()
+
+func destroy() -> void:
 	queue_free()

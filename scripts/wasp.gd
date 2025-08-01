@@ -38,7 +38,8 @@ var score:int = 250
 
 #region LANDING vars
 @export_range(-1,1,2) var direction_x: int = 1
-@export_range(60,180,10) var velocity_x: float = 60
+@export_range(60,180,10) var int_velocity_x: int = 60
+@onready var velocity_x:float = int_velocity_x as float
 @onready var switch_dir_time:float = 144.0 / velocity_x
 @onready var switch_dir_timer:float = switch_dir_time
 #endregion

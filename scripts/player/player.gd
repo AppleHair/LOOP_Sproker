@@ -7,13 +7,15 @@ enum PlayerState {
 	CUTSCENE
 }
 
-var spray_res: PackedScene = preload("res://scenes/spray/spray.tscn")
+var spray_res: PackedScene = preload("res://scenes/spray.tscn")
 
 ## The player's current movement state.
 var state:PlayerState = PlayerState.NORMAL:
 	set(value):
 		match value:
 			PlayerState.NORMAL:
+				pass
+			PlayerState.CUTSCENE:
 				pass
 		state = value
 
@@ -29,6 +31,7 @@ const JUMP_VELOCITY:float = -270
 ## The gravity which influences the player's jump.
 var local_gravity = Vector2(0.0, 1400.0)# original gravity
 var shoot_timer:float = 0.0
+var released_jump:bool = true
 #endregion
 
 func _enter_tree() -> void:
@@ -38,9 +41,9 @@ func _enter_tree() -> void:
 func _physics_process(delta: float) -> void:
 	match state:
 		PlayerState.NORMAL:
+			if not Input.is_action_pressed("jump"):
+				released_jump = true
 			if shoot_timer > 0.0:
-				# if not Input.is_action_pressed("shoot"):
-				# 	shoot_timer = 0.0
 				shoot_timer -= delta
 			# Add the gravity.
 			if not is_on_floor():
@@ -55,8 +58,9 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				# if velocity.x != 0:
 				#	run_sfx_player.start_loop(sound_effects["run"])
-				if Input.is_action_pressed("jump"):
+				if Input.is_action_pressed("jump") and released_jump:
 					velocity.y = JUMP_VELOCITY
+					released_jump = false
 					# Play the jump sound effect
 					# jump_sfx_player.stream = sound_effects["jump"]
 					# jump_sfx_player.play()
@@ -70,3 +74,13 @@ func _physics_process(delta: float) -> void:
 				spray.position = global_position
 				spray.position.y -= 16
 				shoot_timer = SHOOT_COOLDOWN_TIME
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.owner.get_parent().name != "Kills":
+		return
+	if area.owner is Wasp:
+		if (area.owner as Wasp).state == Wasp.State.DYING:
+			return
+	var game = Game.get_game(get_tree())
+	game.call_deferred("load_level",game.current_level)
