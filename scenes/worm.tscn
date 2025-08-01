@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://80pko51tn6ct"]
+
+[ext_resource type="Script" uid="uid://c0mkdam2o3xex" path="res://scripts/worm.gd" id="1_s6o1i"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_6sxr4"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAACcAAAAUklGRpQAAABXRUJQVlA4TIcAAAAvH8AHECcgJCCslz12QyCQ5G8y5QIBwv+DMjHmPwDwl5jgqKHdsPmSg6BF0JiA62cAlVz+pKb52HNE/ydA3xP+wM9TvaJNeqpXtM70rEY607PKPP2uZsnT76oGWGoEsKLYF9KD2BdSBZgkFGAS+qCBKdbk5VUziIvds83R1hOgVRM/0sRAgCYA")
+size_override = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6o1i"]
+atlas = SubResource("PortableCompressedTexture2D_6sxr4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb06d"]
+atlas = SubResource("PortableCompressedTexture2D_6sxr4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lley5"]
+atlas = SubResource("PortableCompressedTexture2D_6sxr4")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ttset"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6o1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb06d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lley5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sxr4"]
+size = Vector2(10, 4)
+
+[node name="Worm" type="Node2D"]
+script = ExtResource("1_s6o1i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ttset")
+offset = Vector2(8, -8)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/worm.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c147c31881caf85f119a44d71ddd660c"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, -2)
+shape = SubResource("RectangleShape2D_6sxr4")

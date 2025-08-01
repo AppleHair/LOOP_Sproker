@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://vtvomjrycj6r" path="res://tile_sets/tiles.tres" id="2_hejxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hejxt"]
-size = Vector2(240, 320)
+size = Vector2(272, 320)
 
 [node name="Room" type="Node2D"]
 texture_filter = 1

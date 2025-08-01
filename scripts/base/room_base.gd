@@ -52,6 +52,7 @@ func _on_bound_area_exited(area: Area2D) -> void:
 	if (
 			area.owner is Spray or
 			area.owner is Wasp or
-			area.owner is Trash
+			area.owner is Trash or
+			area.owner is Worm
 	):
 		area.owner.out_of_bounds()
