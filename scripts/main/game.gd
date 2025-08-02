@@ -9,6 +9,8 @@ extends Node2D
 static func get_game(tree: SceneTree) -> Game:
 	return tree.root.get_node("Main/Game") as Game
 
+var replay:bool = false
+
 @onready var score:int = 0
 
 ## The main player instance of the game.
@@ -77,6 +79,9 @@ func load_level(level: StringName) -> void:
 	rooms.clear()
 	current_level = level
 	remove_current_room()
+	if replay:
+		$ReplaySystem.process_mode = Node.PROCESS_MODE_ALWAYS
+		$ReplaySystem.state = ReplaySystem.State.PLAY
 	for res_string in ResourceLoader.list_directory("res://scenes/levels/"+current_level):
 		ResourceLoader.load_threaded_request("res://scenes/levels/"+current_level+"/"+res_string)
 		rooms_to_load.push_back(res_string)
@@ -107,8 +112,18 @@ func _process(_delta: float) -> void:
 		_level_loaded()
 		#endregion
 		return
+	if replay:
+		if Input.is_action_just_pressed("pause"):
+			stop_replay()
 	# Pressing the pause button will cause the
 	# tree to pause, which will deactivate this node
 	# and it's children and activate the pause menu
 	if Input.is_action_just_pressed("pause") and not get_tree().paused:
 		get_tree().paused = true
+
+func stop_replay() -> void:
+	$ReplaySystem.state = ReplaySystem.State.STOP
+	$ReplaySystem.process_mode = Node.PROCESS_MODE_DISABLED
+	score = 0
+	GUI.get_gui(get_tree()).switch_menu("menu_title")
+	replay = false

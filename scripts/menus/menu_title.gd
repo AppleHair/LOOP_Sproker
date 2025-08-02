@@ -2,6 +2,25 @@ class_name TitleMenu
 extends MenuBase
 ## The game's title screen.
 
+const REPLAY_TIME:float = 6
+var replay_timer:float = REPLAY_TIME
+
+func _enter_tree() -> void:
+	replay_timer = REPLAY_TIME
+	super()
+
+func _process(delta: float) -> void:
+	replay_timer -= delta
+	if replay_timer <= 0.0:
+		start_replay()
+		return
+	super(delta)
+
+func start_replay() -> void:
+	var game = Game.get_game(get_tree())
+	game.replay = true
+	game.load_level("round_2")
+
 ## Keeps track of the removal
 ## of the quit option on web.
 var quit_removed:bool = false

@@ -8,24 +8,20 @@ extends Node
 ## let the player interupt the replay, so the usage of these functions should be avoided.
 
 ## Defines the states the replay system can be in.
-enum State { STOP, RECORD, PLAY }
+enum State { STOP, PLAY }
 ## Stores the replay system's current state, defined by [State].
 var state: State = State.STOP:
 	set(value):
 		state = value
-		if state == State.RECORD:
-			print("recording started...")
-			recorded_inputs.clear()
-			current_time = 0.0
-			return
 		if state == State.PLAY:
-			print("playing recording...")
 			replay_index = 0
 			current_time = 0.0
 			return
-		print("replay system stopped.")
+		if state == State.STOP:
+			for action in ["run_left", "run_right", "jump", "shoot"]:
+				Input.action_release(action)
 ## This array contains [Dictionary]s with input times and action names.
-var recorded_inputs: Array = []#preload("res://replays/replay_demo.json").data
+var recorded_inputs: Array = preload("res://replays/replay_demo.json").data
 ## The replay's current time.
 var current_time: float = 0.0
 ## The index for the current input that is waited for in the [member recorded_inputs] array.
@@ -63,56 +59,7 @@ func play_inputs():
 			Input.action_release(action)
 		replay_index += 1
 
-## Saves the [member recorded_inputs] array in a [JSON]
-## file in user://[param filename].json.
-func save_replay(filename: String):
-	var file = FileAccess.open("user://" + filename + ".json", FileAccess.WRITE)
-	if file:
-		file.store_string(JSON.stringify(recorded_inputs))
-		file.close()
-		print("Replay saved to: ", filename)
-	else:
-		print("Failed to save replay")
-
-## Loads recorded inputs from a [JSON] file
-## in user://[param filename].json into the
-## [member recorded_inputs] array.
-## @deprecated: Generally unused. Just keeping it here if I ever need it I guess...
-func load_replay(filename: String):
-	var file = FileAccess.open("user://" + filename + ".json", FileAccess.READ)
-	if file:
-		recorded_inputs = JSON.parse_string(file.get_as_text())
-		file.close()
-		print("Replay loaded from: ", filename)
-	else:
-		print("Failed to load replay")
-
-func _ready() -> void:
-	# Just to make sure the simulated inputs override the
-	# real inputs by the time the player script checks them.
-	process_physics_priority = -1
-
 func _physics_process(delta):
 	current_time += delta
-	if state == State.RECORD:
-		record_inputs()
-		return
 	if state == State.PLAY:
 		play_inputs()
-
-func _input(event):
-	if state == State.STOP:
-		if event.is_action_pressed("replay_record"):
-			state = State.RECORD
-			return
-		if event.is_action_pressed("replay_play"):
-			state = State.PLAY
-		return
-	if state == State.RECORD and event.is_action_pressed("replay_stop"):
-		state = State.STOP
-		# No reason to save these on Web.
-		if not OS.get_name() == "Web":
-			save_replay("replay_demo")
-		return
-	if state == State.PLAY and event.is_action_pressed("replay_stop"):
-		state = State.STOP

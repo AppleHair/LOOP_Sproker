@@ -12,4 +12,7 @@ func _process(delta: float) -> void:
 	pause_timer -= delta
 	if pause_timer <= 0.0:
 		var game:Game = Game.get_game(get_tree())
+		if game.replay:
+			game.stop_replay()
+			return
 		game.load_level(game.current_level)

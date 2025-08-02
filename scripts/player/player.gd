@@ -40,6 +40,9 @@ var released_jump:bool = true
 func _enter_tree() -> void:
 	init_pos = position
 	state = PlayerState.NORMAL
+	velocity = Vector2(0,0)
+	shoot_timer = SHOOT_COOLDOWN_TIME
+	released_jump = true
 
 func _physics_process(delta: float) -> void:
 	match state:
