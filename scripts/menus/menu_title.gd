@@ -27,7 +27,9 @@ var quit_removed:bool = false
 
 ## Loads the pause menu and the level.
 func start() -> void:
-	Game.get_game(get_tree()).load_level("round_1")
+	var game = Game.get_game(get_tree())
+	game.score = 0
+	game.load_level("round_1")
 
 ## Quits the game.
 func quit() -> void:
