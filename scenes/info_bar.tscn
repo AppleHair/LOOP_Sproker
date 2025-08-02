@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://4xvegu2wpq8b"]
+
+[ext_resource type="Theme" uid="uid://cysonj8aivx2s" path="res://themes/menu_theme.tres" id="1_4jxuk"]
+[ext_resource type="Script" uid="uid://beo81u5cjkgoo" path="res://scripts/info_bar.gd" id="2_7y3e0"]
+
+[node name="InfoBar" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.05
+grow_horizontal = 2
+theme = ExtResource("1_4jxuk")
+script = ExtResource("2_7y3e0")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Score: "
+
+[node name="Round" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 16.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Round "
+horizontal_alignment = 2

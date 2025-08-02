@@ -25,7 +25,7 @@ var state: State = State.STOP:
 			return
 		print("replay system stopped.")
 ## This array contains [Dictionary]s with input times and action names.
-var recorded_inputs: Array = preload("res://replays/replay_demo.json").data
+var recorded_inputs: Array = []#preload("res://replays/replay_demo.json").data
 ## The replay's current time.
 var current_time: float = 0.0
 ## The index for the current input that is waited for in the [member recorded_inputs] array.

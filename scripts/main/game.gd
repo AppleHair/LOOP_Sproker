@@ -9,6 +9,8 @@ extends Node2D
 static func get_game(tree: SceneTree) -> Game:
 	return tree.root.get_node("Main/Game") as Game
 
+@onready var score:int = 0
+
 ## The main player instance of the game.
 var player: Player = preload("res://scenes/player.tscn").instantiate()
 ## The current level whose rooms are loaded into memory.
@@ -85,6 +87,7 @@ func load_level(level: StringName) -> void:
 ## as a result of a call to [method load_level].
 func _level_loaded() -> void:
 	add_room(rooms.keys()[0])
+	GUI.get_gui(get_tree()).switch_menu("menu_pre_round")
 
 func _process(_delta: float) -> void:
 	if not rooms_to_load.is_empty():

@@ -16,7 +16,10 @@ static func get_gui(tree: SceneTree) -> GUI:
 var menus: Dictionary[StringName, MenuBase] = {
 	"menu_pause": preload("res://scenes/menus/menu_pause.tscn").instantiate(),
 	"menu_title": preload("res://scenes/menus/menu_title.tscn").instantiate(),
-	"menu_settings": preload("res://scenes/menus/menu_settings.tscn").instantiate()
+	"menu_settings": preload("res://scenes/menus/menu_settings.tscn").instantiate(),
+	"menu_pre_round": preload("res://scenes/menus/menu_pre_round.tscn").instantiate(),
+	"menu_got_hit": preload("res://scenes/menus/menu_got_hit.tscn").instantiate(),
+	"menu_finish_round": preload("res://scenes/menus/menu_finish_round.tscn").instantiate()
 }
 
 ## Removes the current menu from the [SceneTree],

@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://duhjwpdhli58b"]
+[gd_scene load_steps=5 format=3 uid="uid://duhjwpdhli58b"]
 
 [ext_resource type="Script" uid="uid://c0hygavnh24qi" path="res://scripts/main/main.gd" id="1_d5x1h"]
 [ext_resource type="Script" uid="uid://dtid3fp6s4qy8" path="res://scripts/main/game.gd" id="1_gyfs4"]
 [ext_resource type="Script" uid="uid://cg1lln70pkrft" path="res://scripts/main/gui.gd" id="2_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://4xvegu2wpq8b" path="res://scenes/info_bar.tscn" id="4_d5x1h"]
 
 [node name="Main" type="Node"]
 process_mode = 3
 script = ExtResource("1_d5x1h")
 
 [node name="Game" type="Node2D" parent="."]
-process_mode = 1
+process_mode = 3
 texture_filter = 1
 script = ExtResource("1_gyfs4")
 
 [node name="GUI" type="CanvasLayer" parent="."]
-process_mode = 1
+process_mode = 3
 script = ExtResource("2_gyfs4")
+
+[node name="InfoBar" parent="GUI" instance=ExtResource("4_d5x1h")]

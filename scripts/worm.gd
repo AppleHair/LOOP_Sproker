@@ -10,7 +10,7 @@ var state:State = State.TURNING
 
 const POS_LEFT:float = 48
 const POS_RIGHT:float = 176
-@export_range(1,5) var turn_amount:int = 1
+@export_range(1,6) var turn_amount:int = 1
 @export_range(-1,1,2) var direction_x:int = 1
 
 const SPEED_X:float = 60

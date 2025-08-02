@@ -2,13 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://2f7qcv1x2y3x" path="res://scenes/base/menu_base.tscn" id="1_lf77a"]
 [ext_resource type="Script" uid="uid://i438ta2qw7mu" path="res://scripts/menus/menu_title.gd" id="2_77ira"]
-[ext_resource type="Theme" uid="uid://cysonj8aivx2s" path="res://themes/menu_theme.tres" id="2_oxigu"]
 [ext_resource type="Texture2D" uid="uid://dd1nbj2myrgxg" path="res://sprites/title_alt.png" id="4_xhyjc"]
 [ext_resource type="PackedScene" uid="uid://dhobqdll607ll" path="res://scenes/menu_option.tscn" id="5_7x4ts"]
+[ext_resource type="Script" uid="uid://dlbxdiagi5syy" path="res://scripts/high_score.gd" id="5_oxigu"]
 
 [node name="Title" instance=ExtResource("1_lf77a")]
-texture_filter = 1
-theme = ExtResource("2_oxigu")
 script = ExtResource("2_77ira")
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
@@ -70,7 +68,7 @@ focus_next = NodePath("../Start")
 focus_previous = NodePath("../Start")
 text = "quit"
 
-[node name="creator" type="Label" parent="." index="2"]
+[node name="Creator" type="Label" parent="." index="2"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -82,7 +80,7 @@ offset_bottom = -10.0
 grow_vertical = 0
 text = "By AppleHair"
 
-[node name="gmtk" type="Label" parent="." index="3"]
+[node name="Gmtk" type="Label" parent="." index="3"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -96,3 +94,19 @@ offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "GMTK Game Jam 2025"
+
+[node name="HighScore" type="Label" parent="." index="4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_top = 37.0
+offset_right = 22.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "high score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_oxigu")

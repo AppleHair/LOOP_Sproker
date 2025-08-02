@@ -25,7 +25,6 @@ func resume() -> void:
 func reset() -> void:
 	var game:Game = Game.get_game(get_tree())
 	game.load_level(game.current_level)
-	resume()
 
 ## Switches to the settings menu
 func settings() -> void:

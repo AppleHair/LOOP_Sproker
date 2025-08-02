@@ -29,6 +29,7 @@ var state:State = State.LANDING:
 				rotation = -PI/2 * attack_dir
 				velocity_x = VEL_EXIT * -attack_dir
 			State.DYING:
+				RoomBase.current_room.score_gain += score
 				$AnimatedSprite2D.stop()
 				$AnimatedSprite2D.rotation = PI
 				$Area2D.rotation = PI

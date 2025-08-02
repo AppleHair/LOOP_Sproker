@@ -20,10 +20,21 @@ static var current_room: RoomBase
 ## which is included in in every room
 @onready var player_spawn: Marker2D = $PlayerSpawn
 
+@export var next_round: String = ""
+
+var score_gain:int = 0
+
 ## [b]IF YOU OVERRIDE THIS METHOD, YOU MUST ADD [/b]
 ## [code]super()[/code][b] TO THE END OF THE FUNCTION!!![/b]
 func _enter_tree() -> void:
 	current_room = self
+
+func _process(_delta) -> void:
+	if $Kills.get_child_count() != 0:
+		return
+	get_tree().paused = true
+	Game.get_game(get_tree()).score += score_gain
+	GUI.get_gui(get_tree()).switch_menu("menu_finish_round")
 
 # NOTE: The reason why I don't just calculate
 # bound_rect on _ready is because at that point,

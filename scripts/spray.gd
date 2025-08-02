@@ -1,7 +1,7 @@
 class_name Spray
 extends Node2D
 
-const EXPAND_TIME = 0.15
+const EXPAND_TIME = 0.1
 const SPEED:float = 240.0
 
 var wasps_killed:int = 0
