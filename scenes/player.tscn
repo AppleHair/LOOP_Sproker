@@ -1,7 +1,75 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7q2j750dkb8n"]
+[gd_scene load_steps=12 format=4 uid="uid://b7q2j750dkb8n"]
 
 [ext_resource type="Script" uid="uid://ciwbg5i2vvxa7" path="res://scripts/player/player.gd" id="1_p0vlq"]
-[ext_resource type="SpriteFrames" uid="uid://hqsi2lpfq4ga" path="res://sprite_frames/player.tres" id="2_g2els"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_3vyb7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAABmAQAAUklGRl4BAABXRUJQVlA4TFIBAAAvL8AHEEegFpIkaPONP5MjOH+SYzgNAgkIJ8xhgP8vZAMFkWxQ71X4oI3+ZWQw/wEAgP83NlGo0dHlbBfguLYdt3kAQdgbSO+oSkngZerlBWQiwDrzDpKSmd+6zf+/lB1E9B9t27ZR9lqovgCurmrFuFxrRuhxNFmBq+ObmiMPnUxt0DV91hx5SHJINS94VGUj1n5a5NFff3XgfaNnqXmP/obhDUy/XWqBx+5+i74Fdp/ngBB4TK9pnk8TAI6ByKPwdN4TQDld8vBgjce3ABR6D35pQNLiPAppgdFjKsmSmMxzYAKsgRXDP+/qynfPCx6q5r3e6oIHop6Rh0WOljF6Sob+3H4ygFfVNnoaj8NKf3bdpTZ6Wo/pF1Jz3TMAwq0E3fvWfme/NN0WugNl5p7pwIqu3Hetgpwh3z0YKIVk8d2jgcJxBhDhABNc98UBoGD9AQ==")
+size_override = Vector2(48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = SubResource("PortableCompressedTexture2D_3vyb7")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = SubResource("PortableCompressedTexture2D_3vyb7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = SubResource("PortableCompressedTexture2D_3vyb7")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = SubResource("PortableCompressedTexture2D_3vyb7")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = SubResource("PortableCompressedTexture2D_3vyb7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = SubResource("PortableCompressedTexture2D_3vyb7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smehm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": false,
+"name": &"smoke",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5q5h1"]
 size = Vector2(10, 10)
@@ -15,8 +83,8 @@ script = ExtResource("1_p0vlq")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -8)
-sprite_frames = ExtResource("2_g2els")
-animation = &"pull"
+sprite_frames = SubResource("SpriteFrames_smehm")
+animation = &"idle"
 metadata/_aseprite_wizard_interface_config_ = {
 "animation_section": false,
 "layer_section": false,
@@ -30,13 +98,13 @@ metadata/_aseprite_wizard_config_ = {
 "o_ex_p": "",
 "o_folder": "",
 "o_name": "",
-"only_visible": false,
+"only_visible": true,
 "should_round_fps": true,
 "slice": "",
 "source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/sammy.aseprite",
 "source_uid": -1
 }
-metadata/_aseprite_wizard_source_file_hash_ = "34890980766f386b07001bdbf51ec169"
+metadata/_aseprite_wizard_source_file_hash_ = "60aa4a6e4ede1314b6254f905d72df5b"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -49,4 +117,5 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_g2els")
 debug_color = Color(0.998937, 0, 0.128371, 0.42)
 
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

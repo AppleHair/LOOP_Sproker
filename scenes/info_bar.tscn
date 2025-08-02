@@ -14,8 +14,10 @@ script = ExtResource("2_7y3e0")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 16.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 24.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Score: "
 
@@ -24,8 +26,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 16.0
+offset_left = -48.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 24.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Round "

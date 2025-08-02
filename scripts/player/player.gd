@@ -14,9 +14,9 @@ var state:PlayerState = PlayerState.NORMAL:
 	set(value):
 		match value:
 			PlayerState.NORMAL:
-				$Sprite.play("push")
-			PlayerState.DEAD:
 				$Sprite.play("idle")
+			PlayerState.DEAD:
+				$Sprite.play("hit")
 				get_tree().paused = true
 				GUI.get_gui(get_tree()).switch_menu("menu_got_hit")
 		state = value
@@ -71,11 +71,21 @@ func _physics_process(delta: float) -> void:
 			velocity.x = Input.get_axis("run_left", "run_right") * SPEED
 			move_and_slide()
 			if not is_on_floor() or velocity.x != 0.0:
+				if $Sprite.animation != "walk":
+					$Sprite.play("walk")
+				$Sprite.speed_scale = 0.0
+				if is_on_floor():
+					$Sprite.speed_scale = 1.0
 				shoot_timer = SHOOT_RESUME_TIME
 				return
+			if $Sprite.animation != "idle" and $Sprite.animation != "smoke":
+				$Sprite.play("idle")
 			if shoot_timer > 0.0:
 				shoot_timer -= delta
 			if (Input.is_action_pressed("shoot") and shoot_timer <= 0.0):
+				if $Sprite.animation != "smoke":
+					$Sprite.speed_scale = 1.0
+					$Sprite.play("smoke")
 				var spray = spray_res.instantiate()
 				get_parent().add_child(spray)
 				spray.position = global_position
@@ -90,3 +100,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if (area.owner as Wasp).state == Wasp.State.DYING:
 			return
 	state = PlayerState.DEAD
+
+
+func _on_sprite_animation_finished() -> void:
+	if $Sprite.animation == "smoke":
+		$Sprite.play("idle")
+	pass # Replace with function body.
