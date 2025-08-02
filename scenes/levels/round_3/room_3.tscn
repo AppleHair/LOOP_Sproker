@@ -1,20 +1,197 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwng5pf14ybnf"]
+[gd_scene load_steps=5 format=3 uid="uid://dwng5pf14ybnf"]
 
 [ext_resource type="PackedScene" uid="uid://hndxqih1u0lv" path="res://scenes/base/room_base.tscn" id="1_becom"]
 [ext_resource type="PackedScene" uid="uid://80pko51tn6ct" path="res://scenes/worm.tscn" id="2_1at6p"]
 [ext_resource type="PackedScene" uid="uid://bt75qhnjmu20r" path="res://scenes/wasp.tscn" id="2_n4c7f"]
+[ext_resource type="PackedScene" uid="uid://b32xynpe4v30p" path="res://scenes/trash.tscn" id="4_e6ibj"]
 
 [node name="Room" instance=ExtResource("1_becom")]
 next_round = "round_4"
 
 [node name="Worm" parent="Kills" index="0" instance=ExtResource("2_1at6p")]
 position = Vector2(264, 240)
-turn_amount = 4
+turn_amount = 5
 direction_x = -1
 
 [node name="Worm2" parent="Kills" index="1" instance=ExtResource("2_1at6p")]
 position = Vector2(-64, 240)
-turn_amount = 3
+turn_amount = 6
 
 [node name="Wasp" parent="Kills" index="2" instance=ExtResource("2_n4c7f")]
-position = Vector2(48, -32)
+position = Vector2(48, -8)
+int_velocity_x = 90
+
+[node name="Wasp16" parent="Kills" index="3" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -24)
+direction_x = -1
+int_velocity_x = 180
+
+[node name="Wasp20" parent="Kills" index="4" instance=ExtResource("2_n4c7f")]
+position = Vector2(80, -400)
+direction_x = -1
+int_velocity_x = 100
+
+[node name="Wasp22" parent="Kills" index="5" instance=ExtResource("2_n4c7f")]
+position = Vector2(64, -416)
+direction_x = -1
+int_velocity_x = 100
+
+[node name="Wasp24" parent="Kills" index="6" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -432)
+direction_x = -1
+int_velocity_x = 100
+
+[node name="Wasp2" parent="Kills" index="7" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -344)
+direction_x = -1
+int_velocity_x = 90
+
+[node name="Wasp3" parent="Kills" index="8" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -32)
+direction_x = -1
+int_velocity_x = 90
+
+[node name="Wasp4" parent="Kills" index="9" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -64)
+int_velocity_x = 90
+
+[node name="Wasp5" parent="Kills" index="10" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -104)
+direction_x = -1
+int_velocity_x = 90
+
+[node name="Wasp6" parent="Kills" index="11" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -128)
+int_velocity_x = 90
+
+[node name="Wasp17" parent="Kills" index="12" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -144)
+direction_x = -1
+int_velocity_x = 180
+
+[node name="Wasp7" parent="Kills" index="13" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -224)
+direction_x = -1
+int_velocity_x = 90
+
+[node name="Wasp18" parent="Kills" index="14" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -240)
+int_velocity_x = 180
+
+[node name="Wasp19" parent="Kills" index="15" instance=ExtResource("2_n4c7f")]
+position = Vector2(160, -392)
+int_velocity_x = 100
+
+[node name="Wasp21" parent="Kills" index="16" instance=ExtResource("2_n4c7f")]
+position = Vector2(176, -408)
+int_velocity_x = 100
+
+[node name="Wasp23" parent="Kills" index="17" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -424)
+int_velocity_x = 100
+
+[node name="Wasp8" parent="Kills" index="18" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -360)
+int_velocity_x = 90
+
+[node name="Wasp9" parent="Kills" index="19" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -312)
+direction_x = -1
+int_velocity_x = 180
+
+[node name="Wasp10" parent="Kills" index="20" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -152)
+direction_x = -1
+int_velocity_x = 140
+
+[node name="Wasp11" parent="Kills" index="21" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -176)
+int_velocity_x = 90
+
+[node name="Wasp12" parent="Kills" index="22" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -272)
+int_velocity_x = 140
+
+[node name="Wasp13" parent="Kills" index="23" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -216)
+int_velocity_x = 90
+
+[node name="Wasp14" parent="Kills" index="24" instance=ExtResource("2_n4c7f")]
+position = Vector2(192, -272)
+direction_x = -1
+int_velocity_x = 90
+
+[node name="Wasp15" parent="Kills" index="25" instance=ExtResource("2_n4c7f")]
+position = Vector2(48, -328)
+int_velocity_x = 180
+
+[node name="Trash" parent="Kills" index="26" instance=ExtResource("4_e6ibj")]
+position = Vector2(104, -32)
+
+[node name="Trash2" parent="Kills" index="27" instance=ExtResource("4_e6ibj")]
+position = Vector2(136, -40)
+frame = 2
+
+[node name="Trash3" parent="Kills" index="28" instance=ExtResource("4_e6ibj")]
+position = Vector2(120, -80)
+frame = 2
+
+[node name="Trash4" parent="Kills" index="29" instance=ExtResource("4_e6ibj")]
+position = Vector2(64, -96)
+frame = 1
+
+[node name="Trash5" parent="Kills" index="30" instance=ExtResource("4_e6ibj")]
+position = Vector2(176, -104)
+frame = 1
+
+[node name="Trash6" parent="Kills" index="31" instance=ExtResource("4_e6ibj")]
+position = Vector2(96, -184)
+frame = 2
+
+[node name="Trash7" parent="Kills" index="32" instance=ExtResource("4_e6ibj")]
+position = Vector2(144, -152)
+frame = 1
+
+[node name="Trash8" parent="Kills" index="33" instance=ExtResource("4_e6ibj")]
+position = Vector2(56, -144)
+
+[node name="Trash9" parent="Kills" index="34" instance=ExtResource("4_e6ibj")]
+position = Vector2(184, -208)
+
+[node name="Trash10" parent="Kills" index="35" instance=ExtResource("4_e6ibj")]
+position = Vector2(120, -256)
+frame = 1
+
+[node name="Trash11" parent="Kills" index="36" instance=ExtResource("4_e6ibj")]
+position = Vector2(56, -280)
+frame = 1
+
+[node name="Trash12" parent="Kills" index="37" instance=ExtResource("4_e6ibj")]
+position = Vector2(184, -280)
+
+[node name="Trash13" parent="Kills" index="38" instance=ExtResource("4_e6ibj")]
+position = Vector2(144, -312)
+frame = 1
+
+[node name="Trash14" parent="Kills" index="39" instance=ExtResource("4_e6ibj")]
+position = Vector2(96, -344)
+
+[node name="Trash15" parent="Kills" index="40" instance=ExtResource("4_e6ibj")]
+position = Vector2(144, -352)
+frame = 2
+
+[node name="Trash16" parent="Kills" index="41" instance=ExtResource("4_e6ibj")]
+position = Vector2(72, -376)
+frame = 2
+
+[node name="Trash18" parent="Kills" index="42" instance=ExtResource("4_e6ibj")]
+position = Vector2(168, -384)
+frame = 2
+
+[node name="Trash17" parent="Kills" index="43" instance=ExtResource("4_e6ibj")]
+position = Vector2(112, -440)
+frame = 2
+
+[node name="Trash19" parent="Kills" index="44" instance=ExtResource("4_e6ibj")]
+position = Vector2(128, -408)
+frame = 1
