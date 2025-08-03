@@ -2,37 +2,37 @@
 
 [ext_resource type="Script" uid="uid://bs2yynasy6sf4" path="res://scripts/trash.gd" id="1_3xixx"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_s847y"]
-_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAADcAAAAUklGRtQAAABXRUJQVlA4TMgAAAAvH8AHECcgJCBcEv3f4w+RAGkM9KtZIQHhkuj/Km3+AwBssvkDxEaSwzYHPxs4kAWkBBLbAAl8/029RKWEiP5PgP51QrxEEeh5Pv39ypZQBUo2RQEIaY8jJAFeIWW6TU1M1c4xzgxelel0e+iG7WGP0zAY2OMMZ4puqtLD2cSr9jiZ0gT6IqR0NkmTKmmPo1pUsz0I4uF5Yq+4wba5mL2seMNe3b7oNnRzs7rxujq5PnRzgw39w+q+md2VLyveREGXE3vFjSagSw==")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_3xixx"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAADaAAAAUklGRtIAAABXRUJQVlA4TMUAAAAvH8AHEB8gEEhxDsMtFkzmf6WXjVgwxfsCbf4D8FcB3Ni2VTd7viJ+VQgjzqiKD+KI7Iid+lehzMyuQk28URvG7HtO8uQaIvo/AfwzGQB1+DBAF2KPGAMy3HopPjRgnTZo3uO9mEt+pfhw05Wk29GoKYWKgkV1rl+tD54yl7/S7eLJk6R4806i3YBRja1kWKdBglsPNADgw7cpgInv513nHYDQt64/u3OEoetlal0Xrqs95+eOiZ27fL8DcLRnG/oGgEQAAAA=")
 size_override = Vector2(32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3xixx"]
-atlas = SubResource("PortableCompressedTexture2D_s847y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_exrr5"]
+atlas = SubResource("PortableCompressedTexture2D_3xixx")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_exrr5"]
-atlas = SubResource("PortableCompressedTexture2D_s847y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cq4d"]
+atlas = SubResource("PortableCompressedTexture2D_3xixx")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cq4d"]
-atlas = SubResource("PortableCompressedTexture2D_s847y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6jqc"]
+atlas = SubResource("PortableCompressedTexture2D_3xixx")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w6jqc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_24v10"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3xixx")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_exrr5")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2cq4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6jqc")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 0.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s847y"]
@@ -43,7 +43,7 @@ script = ExtResource("1_3xixx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_w6jqc")
+sprite_frames = SubResource("SpriteFrames_24v10")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -59,7 +59,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/trash.aseprite",
 "source_uid": -1
 }
-metadata/_aseprite_wizard_source_file_hash_ = "420e7b593c898e10ea6f4f52a31006f1"
+metadata/_aseprite_wizard_source_file_hash_ = "0540aceedff2e82282c92fc397647954"
 
 [node name="Area2D" type="Area2D" parent="."]
 

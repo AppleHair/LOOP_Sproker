@@ -27,6 +27,7 @@ int_velocity_x = 100
 
 [node name="Trash" parent="Kills" index="4" instance=ExtResource("3_toyn0")]
 position = Vector2(104, -32)
+frame = 2
 
 [node name="Trash2" parent="Kills" index="5" instance=ExtResource("3_toyn0")]
 position = Vector2(120, -32)
@@ -36,6 +37,7 @@ position = Vector2(72, -48)
 
 [node name="Trash4" parent="Kills" index="7" instance=ExtResource("3_toyn0")]
 position = Vector2(88, -56)
+frame = 1
 
 [node name="Wasp4" parent="Kills" index="8" instance=ExtResource("2_7jwxt")]
 position = Vector2(192, -72)
@@ -51,6 +53,7 @@ position = Vector2(128, -72)
 
 [node name="Trash6" parent="Kills" index="11" instance=ExtResource("3_toyn0")]
 position = Vector2(144, -72)
+frame = 1
 
 [node name="Trash7" parent="Kills" index="12" instance=ExtResource("3_toyn0")]
 position = Vector2(160, -72)
@@ -60,6 +63,7 @@ position = Vector2(56, -72)
 
 [node name="Trash9" parent="Kills" index="14" instance=ExtResource("3_toyn0")]
 position = Vector2(72, -72)
+frame = 2
 
 [node name="Trash10" parent="Kills" index="15" instance=ExtResource("3_toyn0")]
 position = Vector2(64, -104)
@@ -69,6 +73,7 @@ position = Vector2(88, -120)
 
 [node name="Trash12" parent="Kills" index="17" instance=ExtResource("3_toyn0")]
 position = Vector2(112, -136)
+frame = 1
 
 [node name="Trash13" parent="Kills" index="18" instance=ExtResource("3_toyn0")]
 position = Vector2(136, -152)
@@ -106,7 +111,6 @@ frame = 1
 
 [node name="Trash16" parent="Kills" index="26" instance=ExtResource("3_toyn0")]
 position = Vector2(152, -200)
-frame = 1
 
 [node name="Trash20" parent="Kills" index="27" instance=ExtResource("3_toyn0")]
 position = Vector2(104, -200)
@@ -118,7 +122,7 @@ frame = 1
 
 [node name="Trash18" parent="Kills" index="29" instance=ExtResource("3_toyn0")]
 position = Vector2(104, -248)
-frame = 1
+frame = 2
 
 [node name="Trash21" parent="Kills" index="30" instance=ExtResource("3_toyn0")]
 position = Vector2(152, -248)

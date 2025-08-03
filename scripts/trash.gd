@@ -1,3 +1,4 @@
+@tool
 class_name Trash
 extends Node2D
 
@@ -6,7 +7,11 @@ enum State {
 	LANDING
 }
 
-@export_range(0,2,1) var frame:int = 0
+@export_range(0,2,1) var frame:int = 0:
+	set(value):
+		frame = value
+		$AnimatedSprite2D.frame = frame
+
 var state:State = State.ENTERING
 
 func _ready() -> void:
@@ -22,6 +27,8 @@ const ACC_LANDING:float = 700
 #endregion
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
 	match state:
 		State.ENTERING:
 			position.y += ENTER_SPEED_Y * delta
@@ -32,4 +39,6 @@ func _physics_process(delta: float) -> void:
 			velocity_y += ACC_LANDING * delta
 
 func out_of_bounds() -> void:
+	if Engine.is_editor_hint():
+		return
 	queue_free()

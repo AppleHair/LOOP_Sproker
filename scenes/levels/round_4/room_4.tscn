@@ -37,6 +37,7 @@ position = Vector2(184, -152)
 
 [node name="Trash6" parent="Kills" index="8" instance=ExtResource("3_xs7tg")]
 position = Vector2(96, -168)
+frame = 1
 
 [node name="Trash7" parent="Kills" index="9" instance=ExtResource("3_xs7tg")]
 position = Vector2(144, -176)
@@ -46,30 +47,37 @@ position = Vector2(72, -184)
 
 [node name="Trash9" parent="Kills" index="11" instance=ExtResource("3_xs7tg")]
 position = Vector2(120, -192)
+frame = 2
 
 [node name="Trash10" parent="Kills" index="12" instance=ExtResource("3_xs7tg")]
 position = Vector2(168, -200)
+frame = 1
 
 [node name="Trash11" parent="Kills" index="13" instance=ExtResource("3_xs7tg")]
 position = Vector2(56, -208)
+frame = 2
 
 [node name="Trash12" parent="Kills" index="14" instance=ExtResource("3_xs7tg")]
 position = Vector2(96, -216)
+frame = 2
 
 [node name="Trash13" parent="Kills" index="15" instance=ExtResource("3_xs7tg")]
 position = Vector2(184, -224)
 
 [node name="Trash14" parent="Kills" index="16" instance=ExtResource("3_xs7tg")]
 position = Vector2(136, -232)
+frame = 1
 
 [node name="Trash15" parent="Kills" index="17" instance=ExtResource("3_xs7tg")]
 position = Vector2(80, -232)
 
 [node name="Trash16" parent="Kills" index="18" instance=ExtResource("3_xs7tg")]
 position = Vector2(104, -240)
+frame = 1
 
 [node name="Trash17" parent="Kills" index="19" instance=ExtResource("3_xs7tg")]
 position = Vector2(160, -240)
+frame = 2
 
 [node name="Trash18" parent="Kills" index="20" instance=ExtResource("3_xs7tg")]
 position = Vector2(120, -248)
@@ -82,6 +90,7 @@ position = Vector2(176, -248)
 
 [node name="Trash21" parent="Kills" index="23" instance=ExtResource("3_xs7tg")]
 position = Vector2(72, -312)
+frame = 2
 
 [node name="Trash32" parent="Kills" index="24" instance=ExtResource("3_xs7tg")]
 position = Vector2(56, -288)
@@ -91,48 +100,60 @@ position = Vector2(56, -336)
 
 [node name="Trash37" parent="Kills" index="26" instance=ExtResource("3_xs7tg")]
 position = Vector2(56, -384)
+frame = 2
 
 [node name="Trash38" parent="Kills" index="27" instance=ExtResource("3_xs7tg")]
 position = Vector2(56, -432)
+frame = 2
 
 [node name="Trash35" parent="Kills" index="28" instance=ExtResource("3_xs7tg")]
 position = Vector2(184, -312)
 
 [node name="Trash39" parent="Kills" index="29" instance=ExtResource("3_xs7tg")]
 position = Vector2(184, -360)
+frame = 1
 
 [node name="Trash40" parent="Kills" index="30" instance=ExtResource("3_xs7tg")]
 position = Vector2(184, -408)
 
 [node name="Trash41" parent="Kills" index="31" instance=ExtResource("3_xs7tg")]
 position = Vector2(184, -456)
+frame = 2
 
 [node name="Trash25" parent="Kills" index="32" instance=ExtResource("3_xs7tg")]
 position = Vector2(160, -320)
+frame = 2
 
 [node name="Trash22" parent="Kills" index="33" instance=ExtResource("3_xs7tg")]
 position = Vector2(88, -344)
+frame = 1
 
 [node name="Trash24" parent="Kills" index="34" instance=ExtResource("3_xs7tg")]
 position = Vector2(152, -352)
+frame = 1
 
 [node name="Trash23" parent="Kills" index="35" instance=ExtResource("3_xs7tg")]
 position = Vector2(120, -336)
 
 [node name="Trash42" parent="Kills" index="36" instance=ExtResource("3_xs7tg")]
 position = Vector2(136, -336)
+frame = 1
 
 [node name="Trash26" parent="Kills" index="37" instance=ExtResource("3_xs7tg")]
 position = Vector2(160, -392)
+frame = 1
 
 [node name="Trash28" parent="Kills" index="38" instance=ExtResource("3_xs7tg")]
 position = Vector2(104, -376)
+frame = 2
 
 [node name="Trash43" parent="Kills" index="39" instance=ExtResource("3_xs7tg")]
 position = Vector2(88, -376)
+frame = 1
 
 [node name="Trash27" parent="Kills" index="40" instance=ExtResource("3_xs7tg")]
 position = Vector2(136, -408)
+frame = 1
 
 [node name="Trash29" parent="Kills" index="41" instance=ExtResource("3_xs7tg")]
 position = Vector2(80, -400)
@@ -148,12 +169,14 @@ position = Vector2(88, -464)
 
 [node name="Trash34" parent="Kills" index="45" instance=ExtResource("3_xs7tg")]
 position = Vector2(152, -440)
+frame = 1
 
 [node name="Trash45" parent="Kills" index="46" instance=ExtResource("3_xs7tg")]
 position = Vector2(168, -440)
 
 [node name="Trash44" parent="Kills" index="47" instance=ExtResource("3_xs7tg")]
 position = Vector2(136, -440)
+frame = 2
 
 [node name="Wasp" parent="Kills" index="48" instance=ExtResource("4_bf2de")]
 position = Vector2(48, -8)

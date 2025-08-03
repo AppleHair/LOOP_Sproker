@@ -81,6 +81,7 @@ focus_neighbor_right = NodePath("../Quit")
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Quit")
+theme_override_font_sizes/font_size = 16
 text = "start"
 
 [node name="Quit" parent="Text/Options" index="1" instance=ExtResource("5_7x4ts")]
@@ -92,6 +93,7 @@ focus_neighbor_right = NodePath("../Start")
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath("../Start")
 focus_previous = NodePath("../Start")
+theme_override_font_sizes/font_size = 16
 text = "quit"
 
 [node name="Creator" type="Label" parent="." index="2"]
@@ -123,14 +125,17 @@ text = "GMTK Game Jam 2025"
 
 [node name="HighScore" type="Label" parent="." index="4"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -22.0
-offset_top = 11.0
+offset_top = -69.0
 offset_right = 22.0
-offset_bottom = 19.0
+offset_bottom = -61.0
 grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "high score: "
 horizontal_alignment = 1
@@ -139,7 +144,7 @@ script = ExtResource("5_oxigu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5"]
 texture_filter = 1
-position = Vector2(120, 56)
+position = Vector2(120, 51)
 sprite_frames = SubResource("SpriteFrames_6euqb")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
@@ -201,11 +206,26 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -70.0
-offset_top = -61.0
+offset_top = -48.0
 offset_right = 70.0
-offset_bottom = -53.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Beat all 4 rounds to finish the game!"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." index="7"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -148.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = 29.0
+grow_horizontal = 0
+text = "F11 - Fullscreen
+Enter - Pause"
+horizontal_alignment = 2
 vertical_alignment = 1
