@@ -1,0 +1,203 @@
+[gd_scene load_steps=18 format=4 uid="uid://b2s64j0bml87q"]
+
+[ext_resource type="Script" uid="uid://f5jxni7f1re" path="res://scripts/visualize.gd" id="1_1gb2q"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_1gb2q"]
+_data = PackedByteArray("AAADAAUAAAABAAAAJAAAABMAAACQAAAAUklGRogAAABXRUJQVlA4THsAAAAvI4AEEB8gEEjyZ9xlDYFAkj/bTgtIEv9/juY/AH8VOIokyXFWlsEBkkVwLW/+R2JQyDLY5qMVmg1vKET0P3oAI6WU0iTnzW/55BZAp/mgcc6JHspTZkUPSaxopnt60rh9+tI4JNK4fXm3AgA/J1asc+7vXMXVegALAB0A")
+size_override = Vector2(36, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtrwt"]
+atlas = SubResource("PortableCompressedTexture2D_1gb2q")
+region = Rect2(0, 0, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwb3w"]
+atlas = SubResource("PortableCompressedTexture2D_1gb2q")
+region = Rect2(18, 0, 18, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cgnl7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtrwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwb3w")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qtrwt"]
+_data = PackedByteArray("AAADAAUAAAABAAAAJAAAABMAAACMAAAAUklGRoQAAABXRUJQVlA4THcAAAAvI4AEEB8gEEjyZ9xlDYFAkj/bTgtIEv9/juY/AH8VOKpt201+qoMIaqAgh17mmPgqkNDe85OPEoZZvUmI6H+UgGeMMaKq8fqXboFEHk91TdNYOTHZIWN4uebeWFFV1+zrCf+xpRrfYdw0jQWohrppmt/aEkiBBAA=")
+size_override = Vector2(36, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgnl7"]
+atlas = SubResource("PortableCompressedTexture2D_qtrwt")
+region = Rect2(0, 0, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq3n1"]
+atlas = SubResource("PortableCompressedTexture2D_qtrwt")
+region = Rect2(18, 0, 18, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqune"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgnl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq3n1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_rwb3w"]
+_data = PackedByteArray("AAADAAUAAAABAAAAJAAAABMAAACQAAAAUklGRogAAABXRUJQVlA4THsAAAAvI4AEEB8gEEjyZ9xlDYFAkj/bTgtIEv9/juY/AH8VOIokSW5WJwMBki8E6jCHJTEoBMHHNB/vInHotdEPXRQi+h8TgCqEEJxkfxYPnA8Ag8cXkyTzOO/BpGWdmZTXF5Oeq6/FPHL9m3NT9jIA+CnLiqSsZa/DCcAIYAAA")
+size_override = Vector2(36, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqune"]
+atlas = SubResource("PortableCompressedTexture2D_rwb3w")
+region = Rect2(0, 0, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10sop"]
+atlas = SubResource("PortableCompressedTexture2D_rwb3w")
+region = Rect2(18, 0, 18, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdft6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqune")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10sop")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_cgnl7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAagAAABMAAACoAAAAUklGRqAAAABXRUJQVlA4TJMAAAAvaYAEEB8gEEjyZ9xlDYFAkj/bTgtIEv9/juY/AH8VOK6tPVHIatrDHf4d1kNOusAKGOvpP6mC5eiffPxIARH9n4DpDB68WZSw+T+jGWzEOvZq4ESk1/X6qTU/HNKD1uVwSK9a1+t6vY65CivTMiw8OWuRuCBm9pVSw8zUKBE5aysxw0Xjm3BSNXAg/jPTGTycwQYA")
+size_override = Vector2(106, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdft6"]
+atlas = SubResource("PortableCompressedTexture2D_cgnl7")
+region = Rect2(0, 0, 53, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxtgj"]
+atlas = SubResource("PortableCompressedTexture2D_cgnl7")
+region = Rect2(53, 0, 53, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8svj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdft6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxtgj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Visualize" type="Control"]
+process_mode = 4
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1gb2q")
+
+[node name="WalkLeft" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(59, 296)
+sprite_frames = SubResource("SpriteFrames_cgnl7")
+speed_scale = 0.0
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/walk_left.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "59f6d5787bb818272e281e67588ee651"
+
+[node name="Jump" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(83, 277)
+sprite_frames = SubResource("SpriteFrames_wqune")
+speed_scale = 0.0
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/jump.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "378a572b17bceb7c07d84ed4e426f42d"
+
+[node name="WalkRight" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(107, 296)
+sprite_frames = SubResource("SpriteFrames_fdft6")
+speed_scale = 0.0
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/walk_right.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c9e7c0fc3fa482988be7c53856b73de5"
+
+[node name="Shoot" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(163, 296)
+sprite_frames = SubResource("SpriteFrames_8svj3")
+speed_scale = 0.0
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/shoot.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a12c5f594dd888a699fd026698de9583"

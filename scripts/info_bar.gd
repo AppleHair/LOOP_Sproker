@@ -14,6 +14,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var game = Game.get_game(get_tree())
+	if game.replay:
+		visible = false
+		return
+	visible = true
 	if game.current_level != round_follow:
 		round_follow = game.current_level
 		$Round.text = round_base + str(round_follow)[-1]

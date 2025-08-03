@@ -7,6 +7,7 @@ var replay_timer:float = REPLAY_TIME
 
 func _enter_tree() -> void:
 	replay_timer = REPLAY_TIME
+	$AnimatedSprite2D.play("default")
 	super()
 
 func _process(delta: float) -> void:

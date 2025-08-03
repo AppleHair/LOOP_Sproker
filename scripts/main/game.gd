@@ -82,6 +82,9 @@ func load_level(level: StringName) -> void:
 	if replay:
 		$ReplaySystem.process_mode = Node.PROCESS_MODE_ALWAYS
 		$ReplaySystem.state = ReplaySystem.State.PLAY
+		var vis = GUI.get_gui(get_tree()).get_node("Visualize")
+		vis.process_mode = Node.PROCESS_MODE_ALWAYS
+		vis.visible = true
 	for res_string in ResourceLoader.list_directory("res://scenes/levels/"+current_level):
 		ResourceLoader.load_threaded_request("res://scenes/levels/"+current_level+"/"+res_string)
 		rooms_to_load.push_back(res_string)
@@ -124,6 +127,9 @@ func _process(_delta: float) -> void:
 func stop_replay() -> void:
 	$ReplaySystem.state = ReplaySystem.State.STOP
 	$ReplaySystem.process_mode = Node.PROCESS_MODE_DISABLED
+	var vis = GUI.get_gui(get_tree()).get_node("Visualize")
+	vis.process_mode = Node.PROCESS_MODE_DISABLED
+	vis.visible = false
 	score = 0
 	GUI.get_gui(get_tree()).switch_menu("menu_title")
 	replay = false
