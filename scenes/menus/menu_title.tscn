@@ -1,24 +1,35 @@
-[gd_scene load_steps=10 format=4 uid="uid://t3w2q316fjpo"]
+[gd_scene load_steps=12 format=4 uid="uid://t3w2q316fjpo"]
 
 [ext_resource type="PackedScene" uid="uid://2f7qcv1x2y3x" path="res://scenes/base/menu_base.tscn" id="1_lf77a"]
 [ext_resource type="Script" uid="uid://i438ta2qw7mu" path="res://scripts/menus/menu_title.gd" id="2_77ira"]
-[ext_resource type="Texture2D" uid="uid://dd1nbj2myrgxg" path="res://sprites/title_alt.png" id="4_xhyjc"]
 [ext_resource type="PackedScene" uid="uid://dhobqdll607ll" path="res://scenes/menu_option.tscn" id="5_7x4ts"]
 [ext_resource type="Script" uid="uid://dlbxdiagi5syy" path="res://scripts/high_score.gd" id="5_oxigu"]
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_trsx3"]
+_data = PackedByteArray("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")
+size_override = Vector2(194, 119)
+
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_oxigu"]
-_data = PackedByteArray("AAADAAUAAAABAAAA4AEAADwAAABiAQAAUklGRloBAABXRUJQVlA4TE4BAAAv38EOEBcw//M///MfgAfI2fa2baS0Dfo0GiENPOCeIu5Dupwl2/zHVIElwL08T0T/HbiNpEhexsvxH7IrqOGdiO63srkC8LaVzXWDt7O5jryVikVjnps1I8KwOZCzRJYiRUOekiFHwRBTbam05ChsKcByN6PezQ6nZkdEwbZ5585Sw+/VZgDAljW/E9F9Ru3QbejViEO+mc0VgLcBDRXE4WEzm2tEsNCAXkMtexrTDNNmkjCp86Kkq1g05rnwD546DcVC9jummaVm1FBu9mWS+FrikwYnCiKftEE0Z1+Wo5GIoNzMVA/Fs9lsnsa+Vmuk9c1W0GDlmXIzQ+TlGfuyTLq7lZsdwuDL5vqXKTdHRBG0b+RFaU2zMkAdsHubHRGFXG7oFojDj23z7pmlhs/Fho4k4/3S3KnKxYYOyPxGNmfUDgMaSB4ejZvPUUMG")
-size_override = Vector2(480, 60)
+_data = PackedByteArray("AAADAAUAAAABAAAA4AEAAHgAAACSAgAAUklGRooCAABXRUJQVlA4TH0CAAAv38EdEB8gEEjy59lvDYFAkj/PfgsEkvx59nv+A/BXgTTtf9u2EbtusOdVfIQsePB7F07TRSfpHqL74H+afO5xRBK2CNPubkT/HaiN5EhquDzgjfeH7i+oOSCiq0029wDuNNkcB373NselNzNZDd44s+aBYTOWlgJNLZGlJS0NMYmhKQVDnqKlZ5amFKw1ucwj7mb7tXlKRMG2eec+yID3ajPSNNZ8QERXO0qTNxQ16rjtbO4B3NmgoYc617azOQ78Bg1Rd2NM89K0mVVSHWk81TVZweONKxti3jBZ6R6PaSat2ZPUbp6qgoqlAn4mGo6Vm0EqUr3x/OxZVYi1m9cQjT8/P38jI3mKuvXNVg8YeNS1ttnsY5+OkYwFFcfNmk2WvQGAkaYI+rLKzWCV6FDBEktV7WZABUuAgTabp0QUnN6QF6jzyLZ59zzIgJ3akBGd3y/NWZVTGzLQ8VY2d5RmgwbS57pxc7Pz33/73AFdXxNQRrjcCW1t83N+mLv4dkcTcSMzEVxtqvkAYJe8BnxTzT2Aa4kAcC01yyBVTJDiW2kuUzlFJXeaavYkGY4c61si5jhW93wQ4bquT7h685TzZvgA3tgBRRBdTwEkTNcVZXPwYtEsY5UH//vDrrv4qJ4GPTxiOhclgavevJC8eTrFiOY3iCWWNxqOhs28QA1LflN6s/IaEsNmJtQ4RmGN2xrkfED9ZoQCkZg8lAwfmCgafszR8GOOPKi/TGO3zAsCnNV9I7G7byRscJ/U2N0nPbBks/+FxO5/IbnT7v+g7X93S819mSoD11LzAcBZ6mvAdy01dxE3umQiuLqtzQd0fU1AGVEcmRPqbJt/jU0HAA==")
+size_override = Vector2(480, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhyjc"]
 atlas = SubResource("PortableCompressedTexture2D_oxigu")
-region = Rect2(0, 0, 240, 60)
+region = Rect2(0, 60, 240, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7x4ts"]
 atlas = SubResource("PortableCompressedTexture2D_oxigu")
+region = Rect2(240, 60, 240, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6euqb"]
+atlas = SubResource("PortableCompressedTexture2D_oxigu")
+region = Rect2(0, 0, 240, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uas1d"]
+atlas = SubResource("PortableCompressedTexture2D_oxigu")
 region = Rect2(240, 0, 240, 60)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6euqb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_r25sn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -28,7 +39,18 @@ animations = [{
 "texture": SubResource("AtlasTexture_7x4ts")
 }],
 "loop": true,
-"name": &"default",
+"name": &"gamepad",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6euqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uas1d")
+}],
+"loop": true,
+"name": &"keyboard",
 "speed": 1.0
 }]
 
@@ -61,40 +83,39 @@ alignment = 1
 vertical = true
 
 [node name="TextureRect" type="TextureRect" parent="Text" index="0"]
+texture_filter = 1
 layout_mode = 2
-texture = ExtResource("4_xhyjc")
+texture = SubResource("PortableCompressedTexture2D_trsx3")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/logo2025.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "609fd64024ccd98e8f07aa32137bc4d8"
 
-[node name="Options" type="BoxContainer" parent="Text" index="1"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_constants/separation = 8
-alignment = 1
-
-[node name="Start" parent="Text/Options" index="0" instance=ExtResource("5_7x4ts")]
+[node name="Start" parent="Text" index="1" instance=ExtResource("5_7x4ts")]
 unique_name_in_owner = true
 layout_mode = 2
-focus_neighbor_left = NodePath("../Quit")
-focus_neighbor_top = NodePath(".")
-focus_neighbor_right = NodePath("../Quit")
-focus_neighbor_bottom = NodePath(".")
-focus_next = NodePath("../Quit")
-focus_previous = NodePath("../Quit")
 theme_override_font_sizes/font_size = 16
-text = "start"
+text = "press Enter to start"
 
-[node name="Quit" parent="Text/Options" index="1" instance=ExtResource("5_7x4ts")]
-unique_name_in_owner = true
+[node name="Quit" type="Label" parent="Text" index="2"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../Start")
-focus_neighbor_top = NodePath(".")
-focus_neighbor_right = NodePath("../Start")
-focus_neighbor_bottom = NodePath(".")
-focus_next = NodePath("../Start")
-focus_previous = NodePath("../Start")
-theme_override_font_sizes/font_size = 16
-text = "quit"
+text = "Escape to quit"
+horizontal_alignment = 1
 
 [node name="Creator" type="Label" parent="." index="2"]
 layout_mode = 1
@@ -131,9 +152,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -22.0
-offset_top = -69.0
+offset_top = -54.0
 offset_right = 22.0
-offset_bottom = -61.0
+offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -145,7 +166,8 @@ script = ExtResource("5_oxigu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5"]
 texture_filter = 1
 position = Vector2(120, 51)
-sprite_frames = SubResource("SpriteFrames_6euqb")
+sprite_frames = SubResource("SpriteFrames_r25sn")
+animation = &"keyboard"
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -161,18 +183,27 @@ metadata/_aseprite_wizard_config_ = {
 "source": "C:/Users/EYTAN/Files/Art/PixelArt/sprites/jam/instructions.aseprite",
 "source_uid": -1
 }
-metadata/_aseprite_wizard_source_file_hash_ = "d4c09ff00d96cbd6b0b3da6159828159"
+metadata/_aseprite_wizard_source_file_hash_ = "880682e1fafb4acbfaf6d5e2dcf38bcd"
 
-[node name="Label" type="Label" parent="AnimatedSprite2D" index="0"]
+[node name="Keyboard" type="Control" parent="AnimatedSprite2D" index="0"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Shoot" type="Label" parent="AnimatedSprite2D/Keyboard" index="0"]
+layout_mode = 0
 offset_left = 18.0
-offset_top = -7.0
+offset_top = -18.0
 offset_right = 70.0
 offset_bottom = 1.0
-text = "Hold to smoke"
+text = "Hold to smoke
+while standing"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="AnimatedSprite2D" index="1"]
+[node name="Jump" type="Label" parent="AnimatedSprite2D/Keyboard" index="1"]
+layout_mode = 0
 offset_left = -64.0
 offset_top = -26.0
 offset_right = -12.0
@@ -181,7 +212,8 @@ text = "Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="AnimatedSprite2D" index="2"]
+[node name="WalkLeft" type="Label" parent="AnimatedSprite2D/Keyboard" index="2"]
+layout_mode = 0
 offset_left = -103.0
 offset_top = 24.0
 offset_right = -51.0
@@ -190,11 +222,58 @@ text = "Walk left"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="AnimatedSprite2D" index="3"]
+[node name="WalkRight" type="Label" parent="AnimatedSprite2D/Keyboard" index="3"]
+layout_mode = 0
 offset_left = -24.0
 offset_top = 24.0
 offset_right = 28.0
 offset_bottom = 32.0
+text = "Walk right"
+vertical_alignment = 1
+
+[node name="Gamepad" type="Control" parent="AnimatedSprite2D" index="1"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Shoot" type="Label" parent="AnimatedSprite2D/Gamepad" index="0"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 29.0
+offset_right = 103.0
+offset_bottom = 48.0
+text = "Hold to smoke
+while standing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jump" type="Label" parent="AnimatedSprite2D/Gamepad" index="1"]
+layout_mode = 0
+offset_top = -11.0
+offset_right = 52.0
+offset_bottom = -3.0
+text = "Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WalkLeft" type="Label" parent="AnimatedSprite2D/Gamepad" index="2"]
+layout_mode = 0
+offset_left = -105.0
+offset_top = -11.0
+offset_right = -53.0
+offset_bottom = -3.0
+text = "Walk left"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="WalkRight" type="Label" parent="AnimatedSprite2D/Gamepad" index="3"]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -11.0
+offset_right = 18.0
+offset_bottom = -3.0
 text = "Walk right"
 vertical_alignment = 1
 
@@ -206,9 +285,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -70.0
-offset_top = -48.0
+offset_top = -35.0
 offset_right = 70.0
-offset_bottom = -40.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Beat all 4 rounds to finish the game!"

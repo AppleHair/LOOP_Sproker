@@ -5,10 +5,29 @@ extends MenuBase
 const REPLAY_TIME:float = 6
 var replay_timer:float = REPLAY_TIME
 
+func _init() -> void:
+	Input.connect("joy_connection_changed", _on_joy_connection_changed)
+
 func _enter_tree() -> void:
 	replay_timer = REPLAY_TIME
-	$AnimatedSprite2D.play("default")
+	$AnimatedSprite2D.play($AnimatedSprite2D.animation)
 	super()
+
+func _on_joy_connection_changed(_device_id, connected):
+	if connected:
+		$AnimatedSprite2D.animation = "gamepad"
+		$AnimatedSprite2D/Gamepad.visible = true
+		$AnimatedSprite2D/Keyboard.visible = false
+		$Label2.text = "F11 - Fullscreen\nPlus - Pause"
+		$Text/Start.text = "press Plus to start"
+		$Text/Quit.text = "Minus to quit"
+		return
+	$AnimatedSprite2D.animation = "keyboard"
+	$AnimatedSprite2D/Gamepad.visible = false
+	$AnimatedSprite2D/Keyboard.visible = true
+	$Label2.text = "F11 - Fullscreen\nEnter - Pause"
+	$Text/Start.text = "press Enter to start"
+	$Text/Quit.text = "Escape to quit"
 
 func _process(delta: float) -> void:
 	replay_timer -= delta
@@ -22,10 +41,6 @@ func start_replay() -> void:
 	game.replay = true
 	game.load_level("round_2")
 
-## Keeps track of the removal
-## of the quit option on web.
-var quit_removed:bool = false
-
 ## Loads the pause menu and the level.
 func start() -> void:
 	var game = Game.get_game(get_tree())
@@ -37,34 +52,15 @@ func quit() -> void:
 	get_tree().quit()
 
 func _ready() -> void:
-	var start_text = %Start.text
-	# This code removes the quit option when targeting the web and
-	# makes the text say "press enter to start" instead of just "start"
-	if OS.get_name() == "Web":
-		if not quit_removed:
-			var prv_neig = %Quit.get_node(%Quit.focus_previous)
-			var nxt_neig = %Quit.get_node(%Quit.focus_next)
-			nxt_neig.focus_neighbor_top = %Quit.focus_previous
-			nxt_neig.focus_previous = %Quit.focus_previous
-			prv_neig.focus_neighbor_bottom = %Quit.focus_next
-			prv_neig.focus_next = %Quit.focus_next
-			# NOTE: we don't use queue_free here, because
-			# we load this menu when the level starts and
-			# if we wait with the deletion to the end of
-			# the frame, it will create noticable lag at
-			# the start of the level.
-			%Quit.free()
-			quit_removed = true
-		start_text = "press enter to start"
-		%Start.text = start_text
 	# Defining the basic menu behavior.
 	_options = {
-		start_text: start,
-		"quit": quit
+		"press Enter to start": start,
+		"press Plus to start": start
 	}
 	_focus_first = %Start
-	super()
-	# There's a weird bug where the text changes color only when we first enter
-	# the title screen on web, so here we make sure the color is always the same.
 	if OS.get_name() == "Web":
-		%Start.remove_theme_color_override("font_color")
+		$Text/Quit.visible = false
+		super()
+		return
+	_on_cancel = quit
+	super()
