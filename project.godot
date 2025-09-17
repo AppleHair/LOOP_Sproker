@@ -13,7 +13,7 @@ config_version=5
 config/name="LOOP Sproker"
 config/version="1.0.1"
 run/main_scene="res://main_scene.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -43,11 +43,11 @@ high_score=0
 
 [gui]
 
-theme/custom="uid://cysonj8aivx2s"
 theme/default_font_antialiasing=0
 theme/default_font_hinting=0
 theme/default_font_subpixel_positioning=0
 theme/lcd_subpixel_layout=0
+theme/custom="uid://cysonj8aivx2s"
 
 [input]
 
