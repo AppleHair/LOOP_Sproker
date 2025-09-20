@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhobqdll607ll"]
+[gd_scene load_steps=3 format=3 uid="uid://dhobqdll607ll"]
 
 [ext_resource type="Script" uid="uid://c4tfhgmtsal23" path="res://scripts/menu_option.gd" id="1_sr4kn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sr4kn"]
 
 [node name="Option" type="Label"]
 offset_right = 51.0
 offset_bottom = 23.0
 size_flags_horizontal = 4
 focus_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sr4kn")
 text = "option"
 horizontal_alignment = 1
 vertical_alignment = 1
